@@ -1,6 +1,8 @@
 package config;
 
 public class UnitSetting {
+    // TODO: Unit literals should be stored into constants
+
     private String unit = "m";
 
     public String getUnit() {
@@ -21,6 +23,7 @@ public class UnitSetting {
                 newValue = value / 100;
                 break;
             case "m":
+                // TODO: Avoid unnecessary arithmetic operations
                 newValue = value / 1;
                 break;
         }
@@ -28,6 +31,7 @@ public class UnitSetting {
     }
 
     public void unit(String unit) {
+        // TODO: Instead of switch it could be a validation if. IE [ if ("mm".equals(unit) || "cm".equals(unit) || "m".equals(unit) setUnit(unit) ]
         switch (unit) {
             case "mm":
                 setUnit("mm");

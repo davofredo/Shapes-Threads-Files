@@ -12,9 +12,11 @@ public class WriteFileService {
     public synchronized static void write(String shapeData, String path) {
         try {
             FileWriter fw = new FileWriter(path, StandardCharsets.UTF_8);
+            // TODO: Unnecessary variable fileContent. You could pass shapeData directly into fw.write
             String fileContent = shapeData;
             fw.write(fileContent);
             JOptionPane.showMessageDialog(null, String.format(FILE_WRITTEN, path));
+            // TODO: Use try with resources for safety. Try with resources handles close for you
             fw.close();
         }catch (IOException e){
             JOptionPane.showMessageDialog(null , BAD);

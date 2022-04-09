@@ -30,6 +30,7 @@ public class FileMenuMicroservice {
         do {
             try {
                 String option = JOptionPane.showInputDialog(sbMenu);
+                // TODO: Why not to handle it here, instead of throwing an exception?
                 if (option == null) throw new NullPointerException();
                 dirPath = getDirPath(map, Integer.parseInt(option));
                 if (dirPath != null) hasDir = true;

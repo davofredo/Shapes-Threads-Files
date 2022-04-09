@@ -14,7 +14,9 @@ public class MultithreadingOpenFiles implements Runnable {
 
     public void openFile(String filePath) {
         try {
-            Runtime.getRuntime().exec("open -a TextEdit " + filePath);
+            // TODO: This is not operating system agnostic.
+            //Runtime.getRuntime().exec("open -a TextEdit " + filePath);
+            Runtime.getRuntime().exec("notepad " + filePath);
         }catch (Exception e){
             System.out.println("No");
         }

@@ -10,6 +10,7 @@ import static constants.MenuMessages.SELECT_MENU_OPTION;
 import static constants.MenuMessages.SELECT_OPTION;
 import static constants.MenuMessages.BYE;
 
+// TODO: Added a generic but didn't specify type (extends Menu<MenuEnum>)
 public class MainMenu extends Menu {
     @Override
     public void run() {
@@ -28,15 +29,20 @@ public class MainMenu extends Menu {
                             break;
                         case EXIT:
                             JOptionPane.showMessageDialog(null, BYE);
+                            // TODO: Avoid using System.exit.
                             System.exit(0);
                             break;
                     }
+                    // TODO: No need to throw NullPointerException, if you remove the if, NullPointerException would be thrown by itself
                 }else throw new NullPointerException();;
             } catch (InterruptedException e) {
+                // TODO: Print stack trace only for debugging
                 e.printStackTrace();
             } catch (NullPointerException ex) {
+                // TODO: No invalid option message before asking for leave
                 Exit.exit();
             }
+            // TODO: Use class name to refference static attributes, instead of instance name
         }while (!Objects.equals(menuEnum.EXIT, menuEnum));
     }
 
@@ -46,6 +52,7 @@ public class MainMenu extends Menu {
         for(MenuEnum m : MenuEnum.values())
             textMenu.append(String.format(SELECT_OPTION, m.getOption(), m.getOptionName()));
         return textMenu;
+        // TODO: Could return textMenu.toString
     }
 
 

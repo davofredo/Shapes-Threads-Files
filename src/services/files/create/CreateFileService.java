@@ -17,6 +17,7 @@ public class CreateFileService {
             try{
                 String fileName = JOptionPane.showInputDialog(INPUT_FILE_NAME);
                 if (fileName == null) throw new NullPointerException();
+                // TODO: Do not hard code the path separator. Use File.separator instead
                 file = new File(path + "/" +  fileName + EXTENSION);
                 if (file.exists()) {
                     JOptionPane.showMessageDialog(null, String.format(FILE_EXIST, fileName));

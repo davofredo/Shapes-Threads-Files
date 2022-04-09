@@ -9,6 +9,7 @@ import utils.ReadInputUtil;
 public class CalculateService {
     private static UnitSetting unitSetting;
 
+    // TODO: Do not modify a static attribute from the constructor
     public CalculateService(UnitSetting unitSetting) {
         this.unitSetting = unitSetting;
     }

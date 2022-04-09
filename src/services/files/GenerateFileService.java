@@ -9,6 +9,7 @@ public class GenerateFileService  {
         CreateWriteFileService createWriteFileService = new CreateWriteFileService(path, shapeData);
         Thread t1 = new Thread(createWriteFileService);
         t1.start();
+        // TODO: Why to join here when the goal was to allow users to perform additional actions in the mean time?
         t1.join();
     }
 }

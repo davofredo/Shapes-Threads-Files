@@ -19,6 +19,7 @@ public class EquilateralTriangle extends Triangle implements Shape {
         return height = (side * Math.sqrt(3)) / 2;
     }
 
+    // TODO: What if height was not calculated yet?
     @Override
     public double calculateArea() {
         return super.calculateArea(this.side, height);

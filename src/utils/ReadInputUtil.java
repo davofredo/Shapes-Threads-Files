@@ -17,6 +17,7 @@ public class ReadInputUtil {
                     JOptionPane.showMessageDialog(null,NOT_ZERO);
                 else
                     return input;
+                // TODO: choice is never null but if it was, why not to handle it here, instead of throwing an exception?
                 if (choice == null) throw new NullPointerException();
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, OPTION_NOT_VALID);
@@ -25,6 +26,7 @@ public class ReadInputUtil {
             } catch (NullPointerException ex) {
                 Exit.exit();
             }
+            // TODO: Valid is not modified in the loop, but anyway, the loop is going to exit when the input gets returned. In this case, while(true) is a valid option
         } while (!valid);
         return input;
     }
